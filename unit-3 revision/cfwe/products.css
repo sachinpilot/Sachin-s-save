@@ -1,0 +1,30 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+#main{
+    width: 70%;
+    height: auto;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+   
+    gap: 16px;
+
+text-align: center;
+}
+#box{
+    width: 31%;
+    height: 10px;
+   
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 1px solid red;
+ 
+}
+#main>div>img{
+    height:70%;
+    width: 100%;
+
+}

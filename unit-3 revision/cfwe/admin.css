@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+h2{
+    text-align: center;
+    font-style: italic;
+    color: brown;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+form{
+    width: 30%;
+    height: auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: auto;
+}
+#name,#category,#image,#price{
+    width: 98%;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    height: 30px;
+    border: 1px solid gray;
+    padding: 5px;
+}
+select{
+    width: 40%;
+    margin-left: 5px;
+    margin-top: 10px;
+    border: 2.5px solid teal;
+    color:rgb(156, 80, 255);
+
+}
+option{
+    color: red;
+}
+#submit{
+    width: 30%;
+display: block;
+margin: auto;
+margin-top: 10px;
+border: none;
+padding: 8px;
+margin-bottom: 15px;
+}
