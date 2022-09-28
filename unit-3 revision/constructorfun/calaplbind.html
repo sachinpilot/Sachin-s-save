@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call-Apply-Bind</title>
+</head>
+<body>
+    <h1>Call-Apply-Bind</h1>
+</body>
+</html>
+<script >
+
+// let msg="Wish Good Morning";
+// let person="John"
+// let output=person+" "+"says"+" "+msg
+// let output2=`${person} ${msg}`
+// console.log(output2)
+// console.log(output)
+ //CALL
+
+//  let kitchen={
+//      name:'Kitchen',
+//      purpose:"Cook",
+//      cookFood(order){
+//          console.log(`serving ${order} in ${this.name}`)
+//      }
+//  }
+//  let bedroom={
+//      name:"Bedroom",
+//      purpose:"Sleep"
+//  }
+
+// //kitchen.cookFood("maggie")
+// kitchen.cookFood.call(bedroom,"maggie")
+
+// //call FINISH
+
+function userData(unit,salary){
+    // console.log(`user name is ${user1.name} and mobile number is ${user1.mobile}`)
+    // console.log(`user name is ${user2.name} and mobile number is ${user2.mobile}`)
+    //console.log(`user name is ${this.name} and mobile number is ${this.mobile} and he is ${unit} instructor`)
+    console.log(`user name is ${this.name} and mobile number is ${this.mobile} and he is ${unit} instructor,salary is ${salary}`)
+}
+
+let user1={
+    name:"Swanand",
+    mobile:"12536546"
+}
+let user2={
+    name:"Chandra Sekhar",
+    mobile:"16566565658"
+}
+
+//it is best for acess different value from  different object
+
+ //userData.call(user2,"Unit-2")
+
+//IN Apply we have put our Argument inside an Array 
+
+//userData.apply(user1,["Unit-3",80000])
+
+//Bind
+//-IN bind we shoud store it inside a variable 
+//let ans=userData.bind(user2,"Unit-2",50000)
+//console.log(ans)
+
+</script>
+
+<script>
+    //Revision
+ let student1={
+     name:"Samir",
+     age:18
+ }
+ let student2={
+     name:"Asram",
+     age:19
+ }
+ function studentData(rollnumber,cl){
+     //console.log(`Student Name is ${student1.name} and age is ${student1.age}`) Normal cf
+     
+     console.log(`Student Name is ${this.name} and age is ${this.age} and rollnumber is ${rollnumber} and class is ${cl}`) 
+ }
+
+//  //studentData()
+//  studentData.call(student2,15,"5th")-call
+ //studentData.apply(student1,[15,"+2"])
+ //let ans=studentData.bind(student2,15,"5th")
+ //console.log(ans)
+</script>
+
+<script>
+    //REVISION-3
+let employee={
+    name:"Amresh",
+    position:"Manager"
+}
+let employee2={
+    name:"P.K.singh",
+    position:"Asst.Manager"
+}
+function employeedata(salary,exp){
+    console.log(`employee name is ${this.name} and his position is ${this.position} with salary ${salary} and experience is ${exp} year`)
+}
+
+employeedata.call(employee,20000,12)
+employeedata.apply(employee2,[120000,5])
+let ans=employeedata.bind(employee,20000,12)
+console.log(ans);
+</script> 
