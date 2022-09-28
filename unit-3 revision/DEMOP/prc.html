@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="Mform">
+        <input type="Name" id="name" placeholder="product Name">
+        <input type="number" id="price" placeholder="product price">
+        <input type="catagory" id="cat" placeholder="catagory">
+        <input type="url" id="url" placeholder="image Url">
+        <select name="" id="gender">
+            <option value="Select">Select Gender</option>
+            <option value="Male">M</option>
+            <option value="Female">Female</option>
+        </select>
+        <input type="submit" id="submit">
+    </form>
+</body>
+</html>
+
+<script>
+    let form=document.querySelector("#Mform");
+    
+    document.querySelector("form").addEventListener("submit",myfun)
+    let data=JSON.parse(localStorage.getItem("lspd")) || []
+    
+    function productfun(pname,pprice,pcat,pimg,gender){
+    this.name=pname,
+    this.image=pimg,
+    this.price=pprice,
+    this.catagory=pcat,
+  this.gender=gender
+    }
+
+function myfun(event){
+    event.preventDefault()
+    let name=document.querySelector("#name").value;
+    let image=document.querySelector("#url").value;
+    let price=document.querySelector("#price").value;
+    let catagory=document.querySelector("#cat").value;
+    let gender=document.querySelector("#gender").value;
+
+    let ans=new productfun(name,image,price,catagory,gender)
+    if(name=="" || catagory=="" || image=="" || price=="" || gender==""){
+   alert("please fill all detail")
+   return
+    }
+    else{
+        data.push(ans)
+        localStorage.setItem("lspd",JSON.stringify(data))
+        form.reset()
+        alert("Product added sucessfully")
+    }
+
+}
+
+
+</script>
